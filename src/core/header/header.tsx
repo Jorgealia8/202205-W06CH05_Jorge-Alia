@@ -5,7 +5,7 @@ export function Header({ options }: { options: aMenuItems }) {
     const template = (
         <>
             <h1>Bienvenido a la tienda </h1>
-            {/* <Menu options={options}></Menu> */}
+            <Menu options={options}></Menu>
         </>
     );
 

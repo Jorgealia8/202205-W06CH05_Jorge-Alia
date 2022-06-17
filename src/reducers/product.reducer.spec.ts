@@ -14,6 +14,16 @@ describe('Given productReducer', () => {
         offer: true,
         stock: 21,
     };
+    const mockProduct2: iProduct = {
+        id: '21',
+        name: 'botsadgfasdf',
+        price: 30,
+        brand: 'brandmoasdfadsck',
+        description: 'high asdf boot',
+        category: 'sneakers',
+        offer: true,
+        stock: 21,
+    };
     describe('When calling it whit action load with an array of Product s', () => {
         test('Then it should return a new state witch the Products in the action payload', () => {
             //Arrange
@@ -43,14 +53,14 @@ describe('Given productReducer', () => {
     describe('When calling it with action update with the update Product as payload', () => {
         test('Then it should return a new state witch the products update', () => {
             //Arrange
-            const initialState: Array<iProduct> = [mockProduct];
+            const initialState: Array<iProduct> = [mockProduct, mockProduct2];
             const updatedProduct = { ...mockProduct, name: 'slipper' };
             const actionToTest = action.updateProductAction(updatedProduct);
             //Act
             const newState = productReducer(initialState, actionToTest);
             //Assert
-            expect(newState).toHaveLength(1);
-            expect(newState).toStrictEqual([updatedProduct]);
+            expect(newState).toHaveLength(2);
+            expect(newState).toStrictEqual([updatedProduct, mockProduct2]);
         });
     });
     describe('When calling it with action delete for one product', () => {

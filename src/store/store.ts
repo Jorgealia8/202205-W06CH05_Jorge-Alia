@@ -5,7 +5,7 @@ const preloadedState = {
     products: [],
 };
 
-export const stroe = configureStore({
+export const store = configureStore({
     reducer: {
         products: productReducer,
     },

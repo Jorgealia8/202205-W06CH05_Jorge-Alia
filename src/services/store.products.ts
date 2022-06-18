@@ -11,7 +11,7 @@ export class HttStoreProducts {
             return resp.json();
         });
     }
-    getCharacter() {
+    getProduct() {
         //GET
         return fetch(this.url).then((resp) => resp.json());
     }

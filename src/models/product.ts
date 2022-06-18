@@ -4,7 +4,7 @@ export interface iProduct {
     price: number;
     brand: string;
     description: string;
-    category: 'sneakers' | 'tshirts';
+    category: string;
     offer: boolean;
     stock: number;
 }

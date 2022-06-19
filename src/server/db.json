@@ -1,7 +1,7 @@
 {
     "products": [
         {
-            "id": 24,
+            "id": "24",
             "name": "nike zoom",
             "price": 40,
             "brand": "nike",
@@ -11,7 +11,7 @@
             "stock": 30
         },
         {
-            "id": 4,
+            "id": "4",
             "name": "addidas predator",
             "price": 60,
             "brand": "addidas",
@@ -19,6 +19,26 @@
             "category": "sneakers",
             "offer": false,
             "stock": 2
+        },
+        {
+            "id": "8",
+            "name": "camiseta prueba",
+            "price": 29.99,
+            "brand": "Blue banana",
+            "description": "Camiseta perfecta para el día a día",
+            "category": "tshirts",
+            "offer": true,
+            "stock": 6
+        },
+        {
+            "id": "37",
+            "name": "probando otra camiseta",
+            "price": 14.99,
+            "brand": "Huakka",
+            "description": "camiseta divertida",
+            "category": "tshirts",
+            "offer": false,
+            "stock": 1
         }
     ]
 }

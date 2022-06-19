@@ -1,20 +1,30 @@
-import React from 'react';
+import React, { useEffect, useMemo } from 'react';
+import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from '../../core/layout';
 import { aMenuItems } from '../../models/menu-items';
+import { loadProductsAction } from '../../reducers/action.creators';
+import { HttStoreProducts } from '../../services/store.products';
 import './App.css';
 
 function App() {
+    const dispatch = useDispatch();
+    const products = useMemo(() => new HttStoreProducts(), []);
+
+    useEffect(() => {
+        products
+            .getProducts()
+            .then((products) => dispatch(loadProductsAction(products)));
+    }, [products, dispatch]);
+
     const OfferPage = React.lazy(() => import('../../pages/offerPage'));
     const SneakersPage = React.lazy(() => import('../../pages/sneakersPage'));
     const TshirtsPage = React.lazy(() => import('../../pages/tshirtsPage'));
-    const DetailsPage = React.lazy(() => import('../../pages/detailsPage'));
 
     const options: aMenuItems = [
-        { path: '', label: 'offer', page: <OfferPage /> },
-        { path: 'sneakers', label: 'sneakers', page: <SneakersPage /> },
-        { path: 'tshirts', label: 'tshirts', page: <TshirtsPage /> },
-        { path: 'details/:id', label: '', page: <DetailsPage /> },
+        { path: '', label: 'Offer', page: <OfferPage /> },
+        { path: 'Sneakers', label: 'Sneakers', page: <SneakersPage /> },
+        { path: 'T-shirts', label: 'T-shirts', page: <TshirtsPage /> },
     ];
 
     return (

@@ -49,5 +49,14 @@
     },
     "prettier": {
         "singleQuote": true
+    },
+    "jest": {
+        "collectCoverageFrom": [
+            "src/**/*.{ts,tsx}",
+            "!src/components/app/App.tsx",
+            "!src/index.tsx",
+            "!src/utils/testutils.tsx",
+            "!src/reducers/action.types.ts"
+        ]
     }
 }
